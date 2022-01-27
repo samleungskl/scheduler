@@ -1,4 +1,7 @@
 # Interview Scheduler
+!["main_page"](https://github.com/samskleung/scheduler/blob/master/docs/main_page.png)
+!["form"](https://github.com/samskleung/scheduler/blob/master/docs/form.png)
+!["confirm"](https://github.com/samskleung/scheduler/blob/master/docs/confirm.png)
 
 ## Setup
 
