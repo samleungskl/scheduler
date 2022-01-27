@@ -1,5 +1,5 @@
 import React from "react";
-
+//this is the yellow error message when appointment cannot be save/deleted
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">
