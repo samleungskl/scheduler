@@ -31,14 +31,16 @@ export default function Appointment(props) {
     };
     //transition into the saving screen while waiting api response
     transition(SAVING)
-
+    console.log('transition(SAVING)')
     //props.bookInterview is originated from Hooks/useApplicationData
     props.bookInterview(props.id, interview)
       .then(() => {
         transition(SHOW)
+        console.log('transition(SHOW)')
       })
       .catch(() => {
         transition(ERROR_SAVE, true)
+        console.log('transition(ERROR_SAVE, true)')
       })
   }
 
@@ -46,14 +48,16 @@ export default function Appointment(props) {
   function deleteAppoinment(id) {
     //transition into the deleting screen while waiting api response
     transition(DELETING, true)
-    
+    console.log('transition(DELETING, true)')
     //props.cancelInterview is originated from Hooks/useApplicationData
     props.cancelInterview(id)
       .then(() => {
         transition(EMPTY)
+        console.log('transition(EMPTY)')
       })
       .catch(() => {
         transition(ERROR_DELETE, true)
+        console.log('transition(ERROR_DELETE, true)')
       })
 
   }

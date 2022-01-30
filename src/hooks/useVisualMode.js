@@ -7,30 +7,25 @@ export default function useVisualMode(initialMode) {
   const [history, setHistory] = useState([initialMode]);
 
   function transition(newMode, replace = false) {
-    if (replace) { // if replace is true
-      const newHistory = [...history];
-      newHistory.pop();
-      setMode(newMode);
-      setHistory([...newHistory, newMode]);
-    } else { // if replace is false
-      setMode(newMode);
-      setHistory([...history, newMode]);
+
+    setMode(newMode)
+    if (replace) {
+      // remove last element of array and insert new Mode to history
+      setHistory(prev => ([...prev.slice(0, -1), newMode]));
+    } else {
+      //insert new Mode to history
+      setHistory(prev => ([...prev, newMode]));
     }
-  }
+  };
 
   function back() {
-    const newHistory = [...history];
-    //make sure user can only go back to the inital mode
-    if (newHistory.length > 1) {
-      newHistory.pop();
-    };
-
-    setMode(newHistory.slice(-1)[0]);
-    setHistory(newHistory);
-  }
+    if (history.length > 1) {
+      // go back 1 previous mode
+      setMode((history.slice(0, -1)).slice(-1)[0]);
+      setHistory(history.slice(0, -1));
+    }
+  };
 
   return { mode, transition, back, history };
 }
-
-
 
