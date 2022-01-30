@@ -3,9 +3,16 @@
 !["form"](https://github.com/samskleung/scheduler/blob/master/docs/form.png)
 !["confirm"](https://github.com/samskleung/scheduler/blob/master/docs/confirm.png)
 
-## Setup
+## Getting Started
 
-Install dependencies with `npm install`.
+1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
+2. Clone your repository onto your local device.
+3. Install dependencies using the `npm install` command.
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8000/>.
+5. Go to <http://localhost:8000/> in your browser.
+6. The website will run, however, it will be empty because there are no data from the API
+7. [Install](https://github.com/samskleung/scheduler-api) Scheduler-API and run it on port 8001
+8. Once you have Scheduler-API running, you will be able to see and make appointments
 
 ## Running Webpack Development Server
 
